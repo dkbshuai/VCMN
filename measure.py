@@ -1,10 +1,3 @@
-
-# this code is released by: 
-# L. Yang, X.-Z. Wu, Y. Jiang, and Z.-H. Zhou. 
-# Multi-label deep forest. 
-#In: Proceedings of the 24th European Conference on Artificial Intelligence (ECAI'20), 
-# Santiago de Compostela, Spain, 2020. [code]
-
 import numpy as np
 from sklearn import metrics
 
@@ -346,8 +339,6 @@ def compute_auc_vec(y_prob, label):
     return macro_auc
 
 def performance(y,f,T):
-#    code is written by Jerry, according to the original code from 
-#    from http://mlda.swu.edu.cn/codes.php?name=iMVWL
     n,K = f.shape    
     match = np.zeros(n)
     fn = np.zeros(n)
@@ -367,8 +358,6 @@ def performance(y,f,T):
     return match,fp,fn
   
 def mlr_roc(f, y_test):
-#    code is written by Jerry, according to the original code from 
-#    from http://mlda.swu.edu.cn/codes.php?name=iMVWL
     K = y_test.shape[1]
     tpr1 = np.zeros(K)
     fpr1 = np.zeros(K)
@@ -383,10 +372,6 @@ def mlr_roc(f, y_test):
         fpr1[i] = fp1/(fp1+tn1)
     return tpr1,fpr1  
 def mlc_auc(rocZ,newY):
-#    code is written by Jerry, according to the original code from 
-#    from http://mlda.swu.edu.cn/codes.php?name=iMVWL    
-#    rocZ: problistic matrix  n*c
-#    newY: n*c matrix,elements in {-1,1}
     if newY.min()==0:
         newY = newY*2-1
     
